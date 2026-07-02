@@ -61,7 +61,6 @@ import com.cubefury.vendingmachine.trade.TradeManager;
 import com.cubefury.vendingmachine.trade.TradeRequest;
 import com.cubefury.vendingmachine.util.BigItemStack;
 import com.cubefury.vendingmachine.util.OverlayHelper;
-import com.cubefury.vendingmachine.util.Translator;
 import com.cubefury.vendingmachine.util.Wallet;
 import com.gtnewhorizon.structurelib.StructureLibAPI;
 import com.gtnewhorizon.structurelib.alignment.IAlignment;
@@ -344,6 +343,11 @@ public class MTEVendingMachine extends MTEMultiBlockBase
     @Override
     public boolean getDefaultHasMaintenanceChecks() {
         return false;
+    }
+
+    @Override
+    public String[] getStructureDescription(ItemStack stackSize) {
+        return getTooltip().getStructureHint();
     }
 
     @Override
